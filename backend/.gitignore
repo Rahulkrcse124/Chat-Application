@@ -1,0 +1,36 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Logs
+logs/
+*.log
+
+# dotenv environment files
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor specific
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+
+# Coverage / test output (if using testing tools like Jest, Mocha)
+coverage/
+.nyc_output/
+
+# Build output (if any build process involved)
+dist/
+build/
