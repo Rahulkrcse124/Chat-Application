@@ -8,7 +8,7 @@ const Sidebar = () => {
 
   const dispatch = useDispatch();
 
-  // ✅ Corrected destructuring
+  
   const { users, selectedUser, isUserLoading } = useSelector(
     (state) => state.chat
   );
@@ -19,7 +19,7 @@ const Sidebar = () => {
     dispatch(getUsers());
   }, [dispatch]);
 
-  // ✅ Filter users if checkbox is checked
+  
   const filteredUsers = showOnlineOnly
     ? users.filter(
         (user) =>

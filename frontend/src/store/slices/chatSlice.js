@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { axiosInstance } from "../../lib/axios";
 import { toast } from "react-toastify";
 
-// ✅ getUsers
+//  getUsers
 export const getUsers = createAsyncThunk(
   "chat/getUsers",
   async (_, thunkAPI) => {
@@ -53,7 +53,7 @@ const chatSlice = createSlice({
   initialState: {
     messages: [],
     users: [],
-    selectedUser: null, // ✅ fixed
+    selectedUser: null, //  fixed
     isUserLoading: false,
     isMessagesLoading: false,
   },

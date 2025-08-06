@@ -54,7 +54,7 @@ const MessageInput = () => {
     data.append("text", text.trim());
     if (media) data.append("media", media);
 
-    dispatch(sendMessage(data)); // Uncomment and implement sendMessage
+    dispatch(sendMessage(data));
 
     // Reset state
     setText("");
@@ -73,7 +73,7 @@ const MessageInput = () => {
         newMessage.senderId === selectedUser._id ||
         newMessage.receiverId === selectedUser._id
       ) {
-        dispatch(PushMessage(newMessage)); // ✅ corrected
+        dispatch(PushMessage(newMessage)); 
       }
     };
 

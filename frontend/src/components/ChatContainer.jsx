@@ -15,20 +15,20 @@ const ChatContainer = () => {
 
   const messageEndRef = useRef(null);
 
-  // ✅ Get messages on user change
+  
   useEffect(() => {
     if (!selectedUser?._id) return;
     dispatch(getMessages(selectedUser._id));
   }, [selectedUser?._id]);
 
-  // ✅ Scroll to bottom when messages change
+  
   useEffect(() => {
     if (messageEndRef.current) {
       messageEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
 
-  // ✅ Format time
+  
   function formatMessageTime(date) {
     return new Date(date).toLocaleTimeString("en-US", {
       hour: "2-digit",

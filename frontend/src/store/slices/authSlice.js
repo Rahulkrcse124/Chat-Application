@@ -4,7 +4,7 @@ import { connectSocket, disconnectSocket } from "../../lib/socket";
 import { toast } from "react-toastify";
 import { act } from "react";
 
-// ✅ Get current logged-in user
+//  Get current logged-in user
 export const getUsers = createAsyncThunk(
   "auth/getUser",
   async (_, thunkAPI) => {
@@ -22,7 +22,7 @@ export const getUsers = createAsyncThunk(
   }
 );
 
-// ✅ Register user
+//  Register user
 export const signup = createAsyncThunk(
   "user/sign-up",
   async (data, thunkAPI) => {
@@ -38,14 +38,14 @@ export const signup = createAsyncThunk(
   }
 );
 
-// ✅ Login user
+//  Login user
 export const login = createAsyncThunk(
   "user/sign-in",
   async (data, thunkAPI) => {
     try {
       const res = await axiosInstance.post("/user/sign-in", data);
-      // connectSocket(res.data);
-      connectSocket(res.data._id); // ✅ instead of res.data
+      
+      connectSocket(res.data._id); //  instead of res.data
 
       toast.success("Logged in successfully");
       return res.data;
@@ -57,14 +57,14 @@ export const login = createAsyncThunk(
   }
 );
 
-// ✅ Logout user
+//  Logout user
 export const logout = createAsyncThunk(
   "user/sign-out",
   async (navigate, thunkAPI) => {
     try {
-      await axiosInstance.get("/user/sign-out"); // ✅ logs out from server
+      await axiosInstance.get("/user/sign-out"); //  logs out from server
       disconnectSocket();
-      navigate("/login"); // ✅ may decouple this later
+      navigate("/login"); //  may decouple this later
       return null;
     } catch (error) {
       const message = error?.response?.data?.message || "Logout failed";
@@ -89,14 +89,14 @@ export const updateProfile = createAsyncThunk(
   }
 );
 
-// ✅ Auth slice
+//  Auth slice
 const authSlice = createSlice({
   name: "auth",
   initialState: {
     authUser: null,
-    isSigninUp: false, // Can be used later
+    isSigninUp: false, 
     isLoggingIn: false,
-    isUpdatingProfile: false, // Can be used later
+    isUpdatingProfile: false, 
     isCheckingAuth: true,
     onlineUsers: [],
     logoutError: null,

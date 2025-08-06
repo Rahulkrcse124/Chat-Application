@@ -23,7 +23,7 @@ export const isAuthenticated = async (req, res, next) => {
     }
 
     // Attach user to request
-    const user = await userModel.findById(decode.id); // ✅ Correct usage
+    const user = await userModel.findById(decode.id);
     if (!user) {
       return res.status(404).json({
         success: false,

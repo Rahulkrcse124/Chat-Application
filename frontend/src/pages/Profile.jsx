@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Camera, Loader2, Mail, User } from "lucide-react";
-import { updateProfile } from "../store/slices/authSlice"; // adjust path as needed
+import { updateProfile } from "../store/slices/authSlice"; 
 
 const Profile = () => {
   const dispatch = useDispatch();
