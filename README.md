@@ -1,4 +1,5 @@
 💬 Real Time Chat Application
+
 A full-stack real-time chat application built with React for the frontend and Node.js + Express + Socket.IO for the backend. This app supports user authentication, one-to-one chat, group chats, media sharing, and real-time notifications.
 
 📸 Project Images
